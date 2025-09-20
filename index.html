@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MathLearn - Interactive Mathematics Education</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i>∑</i> MathLearn
+                </div>
+                <div class="menu-toggle">☰</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="nav-link active">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Making Mathematics Fun & Accessible</h1>
+                    <p>Interactive lessons, practice problems, and engaging content to help students of all ages master mathematical concepts.</p>
+                    <a href="#what-we-offer" class="btn">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+    <section class="features" id="what-we-offer">
+            <div class="container">
+                <h2 class="section-title">What We Offer</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="feature-icon">+−×÷</div>
+                            <h3>Basic Arithmetic</h3>
+                            <p>Master addition, subtraction, multiplication, and division with our interactive exercises and visual learning tools.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="feature-icon">x²</div>
+                            <h3>Algebra</h3>
+                            <p>Learn to solve equations, work with variables, and understand algebraic concepts through step-by-step tutorials.</p>
+                        </div>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-content">
+                            <div class="feature-icon">π</div>
+                            <h3>Geometry</h3>
+                            <p>Explore shapes, angles, and spatial relationships with interactive geometry tools and visual demonstrations.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Practice Section -->
+        <section class="practice">
+            <div class="container">
+                <h2 class="section-title">Interactive Calculator</h2>
+                <div class="calculator">
+                    <div class="calc-display" id="display">0</div>
+                    <div class="calc-buttons">
+                        <button class="calc-btn" onclick="appendToDisplay('7')">7</button>
+                        <button class="calc-btn" onclick="appendToDisplay('8')">8</button>
+                        <button class="calc-btn" onclick="appendToDisplay('9')">9</button>
+                        <button class="calc-btn operator" onclick="appendToDisplay('/')">/</button>
+                        <button class="calc-btn" onclick="appendToDisplay('4')">4</button>
+                        <button class="calc-btn" onclick="appendToDisplay('5')">5</button>
+                        <button class="calc-btn" onclick="appendToDisplay('6')">6</button>
+                        <button class="calc-btn operator" onclick="appendToDisplay('*')">×</button>
+                        <button class="calc-btn" onclick="appendToDisplay('1')">1</button>
+                        <button class="calc-btn" onclick="appendToDisplay('2')">2</button>
+                        <button class="calc-btn" onclick="appendToDisplay('3')">3</button>
+                        <button class="calc-btn operator" onclick="appendToDisplay('-')">-</button>
+                        <button class="calc-btn" onclick="appendToDisplay('0')">0</button>
+                        <button class="calc-btn" onclick="appendToDisplay('.')">.</button>
+                        <button class="calc-btn" onclick="clearDisplay()">C</button>
+                        <button class="calc-btn operator" onclick="appendToDisplay('+')">+</button>
+                        <button class="calc-btn equals" onclick="calculate()">=</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about" class="page">
+        <div class="container">
+            <h2 class="section-title">About MathLearn</h2>
+            <div class="about-content">
+                <p>MathLearn is an innovative educational platform designed to make mathematics accessible and enjoyable for students of all ages. Our mission is to transform the way people learn math through interactive tools, engaging content, and personalized learning paths.</p>
+                
+                <p>Founded in 2023 by a team of educators and software developers, MathLearn combines pedagogical expertise with cutting-edge technology to create effective learning experiences.</p>
+                
+                <h3 style="margin-top: 2rem;">Our Team</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-img">JD</div>
+                        <h4>John Doe</h4>
+                        <p>Mathematics Ph.D. with 15 years of teaching experience</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-img">AS</div>
+                        <h4>Alice Smith</h4>
+                        <p>Curriculum Developer and Educational Technologist</p>
+                    </div>
+                    <div class="team-member">
+                        <div class="team-img">RJ</div>
+                        <h4>Robert Johnson</h4>
+                        <p>Software Engineer specializing in educational applications</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <form name="contact" method="POST" data-netlify="true">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Education Street, Mathville, MX 54321</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@mathlearn.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About MathLearn</h3>
+                    <p>MathLearn is dedicated to providing high-quality mathematics education resources for students, teachers, and lifelong learners.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home" class="nav-link">Home</a></li>
+                        <li><a href="#about" class="nav-link">About</a></li>
+                        <li><a href="#contact" class="nav-link">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Subscribe</h3>
+                    <p>Subscribe to our newsletter for updates and math learning tips.</p>
+                    <form style="display: flex; margin-top: 1rem;">
+                        <input type="email" placeholder="Your email" class="form-control" style="border-top-right-radius: 0; border-bottom-right-radius: 0;">
+                        <button class="btn" style="border-top-left-radius: 0; border-bottom-left-radius: 0;">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 MathLearn. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
